@@ -1,0 +1,307 @@
+:root {
+  --max-width: 1100px;
+  --main-color: #f1f1f1;
+  --height: 7rem;
+  --width: 10rem;
+  --size-1: 1rem;
+  --red: red;
+  --orange: orange;
+  --yellow: yellow;
+  --green: green;
+  --blue: blue;
+  --indigo: indigo;
+  --violet: violet;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--red)), color-stop(var(--orange)), color-stop(var(--yellow)), color-stop(var(--green)), color-stop(var(--blue)), color-stop(var(--indigo)), to(var(--violet)));
+  background-image: linear-gradient(to right, var(--red), var(--orange), var(--yellow), var(--green), var(--blue), var(--indigo), var(--violet));
+  padding: 4%;
+  min-height: 7rem;
+  width: 100vw;
+  position: relative;
+}
+
+header .showcase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+  /* Overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 253, 253, 0.4);
+}
+
+header .showcase h1 {
+  font-size: 4rem;
+  color: var(--main-color);
+}
+
+header .showcase .rainbow-text {
+  background-image: repeating-linear-gradient(to right, var(--red), var(--orange), var(--yellow), var(--green), var(--blue), var(--indigo), var(--violet));
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow-text 8s ease infinite;
+          animation: rainbow-text 8s ease infinite;
+}
+
+@-webkit-keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  background: var(--main-color);
+  /* Utility */
+}
+
+main .container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+main .container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container section .rainbow-1 {
+  margin: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: #ccc;
+}
+
+main .container section .rainbow-1 .bows {
+  position: relative;
+  height: 80%;
+}
+
+main .container section .rainbow-1 .bows .bow {
+  margin: 0 1rem 1rem 0;
+  text-align: center;
+  position: absolute;
+  height: 7rem;
+  border-top-left-radius: var(--width);
+  border-top-right-radius: var(--width);
+}
+
+main .container section .rainbow-1 .bows .bow.violet {
+  width: 17rem;
+  background: var(--violet);
+}
+
+main .container section .rainbow-1 .bows .bow.indigo {
+  width: 16rem;
+  background: var(--indigo);
+}
+
+main .container section .rainbow-1 .bows .bow.blue {
+  width: 15rem;
+  background: var(--blue);
+}
+
+main .container section .rainbow-1 .bows .bow.green {
+  width: 14rem;
+  background: var(--green);
+}
+
+main .container section .rainbow-1 .bows .bow.yellow {
+  width: 13rem;
+  background: var(--yellow);
+}
+
+main .container section .rainbow-1 .bows .bow.orange {
+  width: 12rem;
+  background: var(--orange);
+}
+
+main .container section .rainbow-1 .bows .bow.red {
+  width: 11rem;
+  background: var(--red);
+}
+
+main .container section .rainbow-1 .bows .bow.middle {
+  width: 10rem;
+  background: var(--main-color);
+}
+
+main .container section .rainbow-2 {
+  margin: 5rem 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .container section .rainbow-2 .one-div {
+  background: var(--main-color);
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10rem;
+  height: 5rem;
+  width: 10rem;
+  -webkit-box-shadow: 0 0 0 0.5rem red, 0 0 0 1rem var(--orange), 0 0 0 1.5rem var(--yellow), 0 0 0 2rem var(--green), 0 0 0 2.5rem var(--blue), 0 0 0 3rem var(--indigo), 0 0 0 3.5rem var(--violet);
+          box-shadow: 0 0 0 0.5rem red, 0 0 0 1rem var(--orange), 0 0 0 1.5rem var(--yellow), 0 0 0 2rem var(--green), 0 0 0 2.5rem var(--blue), 0 0 0 3rem var(--indigo), 0 0 0 3.5rem var(--violet);
+  border-top-left-radius: 20rem;
+  border-top-right-radius: 20rem;
+}
+
+main .container section .rainbow-2 .one-div::before {
+  position: absolute;
+  content: "";
+  width: 200%;
+  height: 80%;
+  background: var(--main-color);
+  bottom: -60px;
+  right: -60px;
+}
+
+main .container section .rainbow-3 {
+  margin: 5rem var(--size-1);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .container section .rainbow-3 ul {
+  position: relative;
+  height: 15rem;
+  width: 20rem;
+  overflow: hidden;
+}
+
+main .container section .rainbow-3 ul li {
+  position: absolute;
+  list-style: none;
+  border-radius: 50%;
+  top: 100%;
+  left: 50%;
+  border: 0.5rem solid #ccc;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(250, 250, 250, 0.5);
+          box-shadow: 0 0 0 0.1rem rgba(250, 250, 250, 0.5);
+  -webkit-animation: color-rainbow 5s infinite alternate;
+          animation: color-rainbow 5s infinite alternate;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .container section .rainbow-3 ul li:nth-child(1) {
+  width: 7rem;
+  height: 7rem;
+  border-color: var(--red);
+}
+
+main .container section .rainbow-3 ul li:nth-child(2) {
+  width: 8rem;
+  height: 8rem;
+  border-color: var(--orange);
+}
+
+main .container section .rainbow-3 ul li:nth-child(3) {
+  width: 9rem;
+  height: 9rem;
+  border-color: var(--yellow);
+}
+
+main .container section .rainbow-3 ul li:nth-child(4) {
+  width: 10rem;
+  height: 10rem;
+  border-color: var(--green);
+}
+
+main .container section .rainbow-3 ul li:nth-child(5) {
+  width: 11rem;
+  height: 11rem;
+  border-color: var(--blue);
+}
+
+main .container section .rainbow-3 ul li:nth-child(6) {
+  width: 12rem;
+  height: 12rem;
+  border-color: var(--indigo);
+}
+
+main .container section .rainbow-3 ul li:nth-child(7) {
+  width: 13rem;
+  height: 13rem;
+  border-color: var(--violet);
+}
+
+@-webkit-keyframes color-rainbow {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(315deg);
+            transform: translate(-50%, -50%) rotate(315deg);
+  }
+}
+
+@keyframes color-rainbow {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(315deg);
+            transform: translate(-50%, -50%) rotate(315deg);
+  }
+}

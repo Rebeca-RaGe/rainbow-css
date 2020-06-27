@@ -1,0 +1,292 @@
+:root {
+  --max-width: 1100px;
+  --main-color: #f1f1f1;
+  --height: 7rem;
+  --width: 10rem;
+  --size-1: 1rem;
+  --red: red;
+  --orange: orange;
+  --yellow: yellow;
+  --green: green;
+  --blue: blue;
+  --indigo: indigo;
+  --violet: violet;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-image: linear-gradient(
+    to right,
+    var(--red),
+    var(--orange),
+    var(--yellow),
+    var(--green),
+    var(--blue),
+    var(--indigo),
+    var(--violet)
+  );
+  padding: 4%;
+  min-height: 7rem;
+  width: 100vw;
+  position: relative;
+
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+    /* Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 253, 253, 0.4);
+
+    h1 {
+      font-size: 4rem;
+      color: var(--main-color);
+    }
+
+    //Text rainbow
+    .rainbow-text {
+      // Static
+      // background-image: linear-gradient(
+      //   to right,
+      //   var(--red),
+      //   var(--orange),
+      //   var(--yellow),
+      //   var(--green),
+      //   var(--blue),
+      //   var(--indigo),
+      //   var(--violet)
+      // );
+      // Anmation
+      background-image: repeating-linear-gradient(
+        to right,
+        var(--red),
+        var(--orange),
+        var(--yellow),
+        var(--green),
+        var(--blue),
+        var(--indigo),
+        var(--violet)
+      );
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow-text 8s ease infinite;
+    }
+
+    @keyframes rainbow-text {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 25%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+}
+
+main {
+  background: var(--main-color);
+
+  /* Utility */
+  .container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    min-height: 80vh;
+
+    section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .rainbow-1 {
+        margin: 1rem;
+        flex: 1;
+        background: #ccc;
+
+        .bows {
+          position: relative;
+          height: 80%;
+
+          .bow {
+            margin: 0 1rem 1rem 0;
+            $height: 7rem;
+            $width: 10rem;
+            text-align: center;
+            position: absolute;
+            height: $height;
+            border-top-left-radius: var(--width);
+            border-top-right-radius: var(--width);
+
+            &.violet {
+              width: $width + 7;
+              background: var(--violet);
+            }
+            &.indigo {
+              width: $width + 6;
+              background: var(--indigo);
+            }
+
+            &.blue {
+              width: $width + 5;
+              background: var(--blue);
+            }
+
+            &.green {
+              width: $width + 4;
+              background: var(--green);
+            }
+
+            &.yellow {
+              width: $width + 3;
+              background: var(--yellow);
+            }
+
+            &.orange {
+              width: $width + 2;
+              background: var(--orange);
+            }
+
+            &.red {
+              width: $width + 1;
+              background: var(--red);
+            }
+
+            &.middle {
+              width: $width;
+              background: var(--main-color);
+            }
+          }
+        }
+      }
+
+      .rainbow-2 {
+        margin: 5rem 1rem;
+        flex: 1;
+
+        .one-div {
+          background: var(--main-color);
+          position: relative;
+          margin: 0 auto;
+          margin-top: 10rem;
+          height: 5rem;
+          width: 10rem;
+          box-shadow: 0 0 0 0.5rem red, 0 0 0 1rem var(--orange),
+            0 0 0 1.5rem var(--yellow), 0 0 0 2rem var(--green),
+            0 0 0 2.5rem var(--blue), 0 0 0 3rem var(--indigo),
+            0 0 0 3.5rem var(--violet); //create each bow
+          border-top-left-radius: 20rem; //Should be double of width to make the bow
+          border-top-right-radius: 20rem; //Should be double of width to make the bow
+
+          //Cover the bottom of the figure to make a bow
+          &::before {
+            position: absolute;
+            content: "";
+            width: 200%;
+            height: 80%;
+            background: var(--main-color);
+            bottom: -60px;
+            right: -60px;
+          }
+        }
+      }
+
+      .rainbow-3 {
+        margin: 5rem var(--size-1);
+        flex: 1;
+        $size-1r: 7rem;
+
+        ul {
+          position: relative;
+          height: 15rem;
+          width: 20rem;
+          overflow: hidden;
+          //border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+
+          li {
+            position: absolute;
+            list-style: none;
+            border-radius: 50%; // make the bow from square
+            top: 100%; // bow starts at the bottom
+            left: 50%; //middle
+            border: 0.5rem solid #ccc; //size of bow
+            border-bottom-color: transparent !important;
+            border-left-color: transparent !important;
+            box-shadow: 0 0 0 0.1rem rgba(250, 250, 250, 0.5);
+            animation: color-rainbow 5s infinite alternate;
+            transform: translate(-50%, -50%); //bow shape
+
+            &:nth-child(1) {
+              width: $size-1r;
+              height: $size-1r;
+              border-color: var(--red);
+            }
+
+            &:nth-child(2) {
+              width: $size-1r + 1;
+              height: $size-1r + 1;
+              border-color: var(--orange);
+            }
+
+            &:nth-child(3) {
+              width: $size-1r + 2;
+              height: $size-1r + 2;
+              border-color: var(--yellow);
+            }
+
+            &:nth-child(4) {
+              width: $size-1r + 3;
+              height: $size-1r + 3;
+              border-color: var(--green);
+            }
+
+            &:nth-child(5) {
+              width: $size-1r + 4;
+              height: $size-1r + 4;
+              border-color: var(--blue);
+            }
+
+            &:nth-child(6) {
+              width: $size-1r + 5;
+              height: $size-1r + 5;
+              border-color: var(--indigo);
+            }
+
+            &:nth-child(7) {
+              width: $size-1r + 6;
+              height: $size-1r + 6;
+              border-color: var(--violet);
+            }
+          }
+
+          @keyframes color-rainbow {
+            0% {
+              transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            100% {
+              transform: translate(-50%, -50%) rotate(315deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

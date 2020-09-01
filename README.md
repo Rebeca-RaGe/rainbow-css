@@ -1,4 +1,4 @@
-# Different type of rainbows
+# Different types of rainbows
 
 I make three designs of rainbows with CSS using SASS.
 The last one has an animation
